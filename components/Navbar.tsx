@@ -1,10 +1,13 @@
+import Link from "next/link";
+import CloseButton from "./CloseButton";
+
 type NavbarProps = {
   isDetailPage?: true | null;
 };
 
 export default function Navbar({ isDetailPage }: NavbarProps) {
   return (
-    <div className="bg-Quicksand pt-16 px-12 mb-">
+    <div className="bg-Quicksand pt-16 pb-6 px-12 ">
       <div className="relative flex items-start justify-between">
         <picture className="block w-72">
           <source srcSet="/logo_white.svg" type="image/webp" />
@@ -14,12 +17,7 @@ export default function Navbar({ isDetailPage }: NavbarProps) {
       </div>
       {isDetailPage ? (
         <div className="flex justify-center">
-          <div
-            className="mt-10 w-72 h-32 border-solid border border-white flex justify-center items-center"
-            style={{ borderRadius: "50%" }}
-          >
-            <span className="font-extralight font-sans text-3xl ">CLOSE</span>
-          </div>
+          <CloseButton className="mt-10" />
         </div>
       ) : null}
     </div>
