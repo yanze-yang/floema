@@ -5,5 +5,5 @@ type Props = {
 };
 
 export default function ContainerMeduim({ children }: Props) {
-  return <div className="px-12">{children}</div>;
+  return <div className="px-6">{children}</div>;
 }
