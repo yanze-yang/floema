@@ -1,15 +1,23 @@
 import React from "react";
 import ContainerMeduim from "../../components/ContainerMeduim";
 import Navbar from "../../components/Navbar";
-import styled from "styled-components";
 import ShopButton from "../../components/ShopButton";
 import CloseButton from "../../components/CloseButton";
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: repeat(4, min-content);
-`;
+type IconProps = {
+  src: string;
+  type: string;
+  alt: string;
+};
+
+const Icon = ({ src, type, alt }: IconProps) => {
+  return (
+    <picture className="self-start w-12 sm:w-16 md:w-28">
+      <source srcSet={src} type={`image/${type}`} />
+      <img src={src} alt={alt} />
+    </picture>
+  );
+};
 
 const Description = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -49,19 +57,13 @@ export default function Detail() {
               Silver Necklace
             </h1>
           </div>
-          <Grid className="items-center gap-x-4 gap-y-6 sm:gap-x-3 sm:gap-y-9 md:gap-x-8">
-            <picture className="self-start w-12 sm:w-16 md:w-28">
-              <source srcSet="/icon-compass.png" type="image/png" />
-              <img src="/icon-compass.png" alt="icon-compass" />
-            </picture>
+          <div className="grid grid-rows-[repeat(4, min-content)] grid-cols-[1fr_4fr] items-center gap-x-4 gap-y-6 sm:gap-x-3 sm:gap-y-9 md:gap-x-8">
+            <Icon src="/icon-compass.png" alt="icon-compass" type="png" />
             <Description>
               The necklace is 44 cm long. <br></br>The setting is 5 mm long and
               4 mm wide.
             </Description>
-            <picture className="self-start w-12 sm:w-16 md:w-28">
-              <source srcSet="/icon-star.png" type="image/png" />
-              <img src="/icon-star.png" alt="icon-star" />
-            </picture>
+            <Icon src="/icon-star.png" alt="/icon-star" type="png" />
             <Description>Silver. Ruby Stone</Description>
             <Tag>Info</Tag>
             <Description>
@@ -75,7 +77,7 @@ export default function Detail() {
               original picture evidences the unique and artisanal manufacture of
               the piece.
             </Description>
-          </Grid>
+          </div>
           <ShopButton className="pt-16 md:pt-32" />
           <div className="flex justify-center pt-12 pb-32 md:pt-28 md:pb-72">
             <CloseButton />
