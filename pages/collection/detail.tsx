@@ -33,7 +33,15 @@ export default function Detail() {
       <Navbar isDetailPage={true} />
       <section className="bg-Quicksand">
         <ContainerMeduim>
-          <div className="py-10 sm:py-16 md:py-20">
+          <div className="py-10 sm:py-16 md:py-24">
+            <picture>
+              <source srcSet="/carousel.png" type="image/png" />
+              <img
+                className="mb-5 sm:mb-8 md:mb-16 mx-auto"
+                src="/carousel.png"
+                alt="carousel"
+              />
+            </picture>
             <div className="font-sans text-base tracking-normal font-light pb-10 sm:text-xl md:text-2xl">
               VITA COLLECTION
             </div>

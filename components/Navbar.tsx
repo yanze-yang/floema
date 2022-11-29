@@ -13,7 +13,7 @@ export default function Navbar({ isDetailPage }: NavbarProps) {
           <source srcSet="/logo_white.svg" type="image/webp" />
           <img src="/logo_white.svg" alt="logo" />
         </picture>
-        <div className="font-serif text-2xl tracking-wide  sm:text-4xl md:text-6xl">
+        <div className="font-serif text-2xl tracking-wide sm:text-4xl md:text-6xl">
           About
         </div>
       </div>
