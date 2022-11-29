@@ -18,8 +18,8 @@ export default function Navbar({ isDetailPage }: NavbarProps) {
         </div>
       </div>
       {isDetailPage ? (
-        <div className="flex justify-center">
-          <CloseButton className="mt-6 md:mt-10" />
+        <div className="flex justify-center mt-10">
+          <CloseButton />
         </div>
       ) : null}
     </div>

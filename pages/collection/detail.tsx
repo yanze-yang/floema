@@ -39,8 +39,8 @@ export default function Detail() {
             <source srcSet="/carousel.png" type="image/png" />
             <img src="/carousel.png" alt="carousel" />
           </picture>
-          <div className="pt-10 pb-5 md:pt-16 md:pb-14">
-            <div className="font-sans text-base tracking-normal font-light pb-2 sm:text-xl">
+          <div className="py-10 md:pt-16 md:pb-14">
+            <div className="font-sans text-base tracking-normal font-light pb-4 sm:text-xl">
               VITA COLLECTION
             </div>
             <h1 className="text-8xl font-serif tracking-tight leading-[5.3rem] md:text-9xl md:text-[12rem] md:leading-[10.5rem]">
@@ -74,9 +74,9 @@ export default function Detail() {
               the piece.
             </Description>
           </Grid>
-          <ShopButton className="pt-12 md:pt-16" />
-          <div className="flex justify-center">
-            <CloseButton className="mt-10 mb-24 md:mt-20 md:mb-48" />
+          <ShopButton className="pt-16" />
+          <div className="flex justify-center pt-12 pb-32">
+            <CloseButton />
           </div>
         </ContainerMeduim>
       </section>

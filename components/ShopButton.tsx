@@ -6,7 +6,7 @@ type Props = {
 
 export default function ShopButton({ className }: Props) {
   return (
-    <div className={`${className} font-serif font-light text-2xl md:text-5xl`}>
+    <div className={`${className} font-serif font-light text-3xl md:text-5xl`}>
       Shop it &gt;&gt;
     </div>
   );
