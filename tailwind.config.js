@@ -5,9 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: {
-      greyRed: "#BC978C",
-      greyBlue: "#B2B8C3",
+    extend: {
+      colors: {
+        Quicksand: "#BC978C",
+        greyBlue: "#B2B8C3",
+      },
     },
     fontFamily: {
       sans: ["ui-sans-serif", "system-ui"],
