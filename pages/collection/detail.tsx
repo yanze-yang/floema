@@ -1,8 +1,12 @@
 import React from "react";
-import ContainerMeduim from "../../../components/ContainerMeduim";
-import Navbar from "../../../components/Navbar";
-import CloseButton from "../../../components/CloseButton";
+import Container from "../../components/Container";
+import Navbar from "../../components/Navbar";
+import CloseButton from "../../components/CloseButton";
 import styled from "styled-components";
+
+const Section = styled.section`
+  background-color: ${(props) => props.theme.color.quicksand};
+`;
 
 type IconProps = {
   src: string;
@@ -49,8 +53,12 @@ const Tag = ({ children }: { children: React.ReactNode }) => {
 };
 
 const ShopButton = styled.div`
-  font-size: 3.75rem;
-  font-size: clamp(3.75rem, 1.785714285714286rem + 8.928571428571427vw, 7.5rem);
+  font-size: 2.25rem;
+  font-size: clamp(
+    2.25rem,
+    1.0714285714285714rem + 5.357142857142857vw,
+    4.5rem
+  );
   font-family: ${(props) => props.theme.font.serif};
 `;
 
@@ -69,8 +77,8 @@ export default function DetailIndex() {
   return (
     <>
       <Navbar isDetailPage={true} />
-      <section className="bg-Quicksand">
-        <ContainerMeduim>
+      <Section>
+        <Container>
           <div className="py-10 sm:py-16 md:py-24">
             <picture>
               <source srcSet="/carousel.png" type="image/png" />
@@ -108,11 +116,11 @@ export default function DetailIndex() {
             </Description>
           </div>
           <FlexBottom>
-            <ShopButton>Shop it &gt;&gt;</ShopButton>
+            <ShopButton>Shop it &gt;</ShopButton>
             <CloseButton />
           </FlexBottom>
-        </ContainerMeduim>
-      </section>
+        </Container>
+      </Section>
     </>
   );
 }
