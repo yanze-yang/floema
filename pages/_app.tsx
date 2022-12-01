@@ -1,15 +1,12 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { theme } from "../styles/theme";
-import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "George X";
-    src: url("/fonts/George X.otf") format("otf");
-    font-style: normal;
-    font-display: swap;
+    src: url("/fonts/george_x.woff") format("woff");
   }
 `;
 

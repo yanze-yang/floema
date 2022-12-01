@@ -51,9 +51,9 @@ export default class MyDocument extends Document {
 
           <link
             rel="preload"
-            href="fonts/font/George X.otf"
+            href="fonts/george_x.woff"
             as="font"
-            type="font/otf"
+            type="font/woff"
             crossOrigin=""
           />
         </Head>
