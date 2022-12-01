@@ -37,7 +37,7 @@ const ProductName = styled.h1`
     -0.2857142857142856rem + 25.44642857142857vw,
     16rem
   );
-  font-family: "George X", "Times New Roman", Times, serif;
+  font-family: ${(props) => props.theme.font.serif};
   line-height: 110%;
 `;
 
