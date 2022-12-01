@@ -3,12 +3,23 @@ import ContainerMeduim from "../../components/ContainerMeduim";
 import Navbar from "../../components/Navbar";
 import ShopButton from "../../components/ShopButton";
 import CloseButton from "../../components/CloseButton";
+import styled from "styled-components";
 
 type IconProps = {
   src: string;
   type: string;
   alt: string;
 };
+
+const Title = styled.h1`
+  font-size: 5.3125rem;
+  font-size: clamp(
+    5.3125rem,
+    -0.2857142857142856rem + 25.44642857142857vw,
+    16rem
+  );
+  line-height: 110%;
+`;
 
 const Icon = ({ src, type, alt }: IconProps) => {
   return (
@@ -21,7 +32,10 @@ const Icon = ({ src, type, alt }: IconProps) => {
 
 const Description = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="font-sans font-extralight text-sm tracking-tight leading-normal  sm:text-2xl  md:text-4xl md:leading-relaxed">
+    <div
+      className="font-sans font-extralight text-sm tracking-tight sm:text-2xl md:text-4xl"
+      style={{ lineHeight: "140%" }}
+    >
       {children}
     </div>
   );
@@ -53,9 +67,10 @@ export default function Detail() {
             <div className="font-sans text-base tracking-normal font-light pb-10 sm:text-xl md:text-2xl">
               VITA COLLECTION
             </div>
-            <h1 className="text-8xl font-serif tracking-tight leading-[5.3rem] sm:text-[8.5rem] sm:leading-[8rem] md:text-9xl md:text-[14rem] md:leading-[15rem]">
+            {/* <h1 className="text-8xl font-serif tracking-tight leading-[5.3rem] sm:text-[8.5rem] sm:leading-[8rem] md:text-9xl md:text-[14rem] md:leading-[15rem]">
               Silver Necklace
-            </h1>
+            </h1> */}
+            <Title className="font-serif">Silver Necklace</Title>
           </div>
           <div className="grid grid-rows-[repeat(4, min-content)] grid-cols-[1fr_4fr] items-center gap-x-4 gap-y-6 sm:gap-x-3 sm:gap-y-9 md:gap-x-8">
             <Icon src="/icon-compass.png" alt="icon-compass" type="png" />

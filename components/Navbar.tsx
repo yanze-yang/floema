@@ -1,27 +1,49 @@
 import Link from "next/link";
 import CloseButton from "./CloseButton";
+import styled from "styled-components";
 
 type NavbarProps = {
   isDetailPage?: true | null;
 };
 
+const Wrapper = styled.nav`
+  padding: calc(2rem + 1vw);
+  background-color: ${(props) => props.theme.color.quicksand};
+`;
+
+const FlexLayout = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Logo = styled.div`
+  width: 8rem;
+`;
+
+const About = styled.div`
+  font-size: 1.5rem;
+  font-family: "George X", "Times New Roman", Times, serif;
+  letter-spacing: 1px;
+`;
+
 export default function Navbar({ isDetailPage }: NavbarProps) {
   return (
-    <div className="bg-Quicksand px-6 pt-6 pb-6 sm:pt-8 md:pt-16 md:pb-6 md:px-12 ">
-      <div className="relative flex items-center justify-between">
-        <picture className="block w-36 sm:w-48 md:w-72">
-          <source srcSet="/logo_white.svg" type="image/webp" />
-          <img src="/logo_white.svg" alt="logo" />
-        </picture>
-        <div className="font-serif text-2xl tracking-wide sm:text-4xl md:text-6xl">
-          About
-        </div>
-      </div>
+    <Wrapper>
+      <FlexLayout>
+        <Logo>
+          <picture>
+            <source srcSet="/logo_white.svg" type="image/webp" />
+            <img src="/logo_white.svg" alt="logo" />
+          </picture>
+        </Logo>
+        <About>About</About>
+      </FlexLayout>
       {isDetailPage ? (
         <div className="flex justify-center mt-10">
           <CloseButton />
         </div>
       ) : null}
-    </div>
+    </Wrapper>
   );
 }
