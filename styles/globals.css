@@ -28,10 +28,3 @@ a {
     background: black;
   }
 }
-
-@font-face {
-  font-family: "George X";
-  src: url("/fonts/George X.otf") format("otf");
-  font-style: normal;
-  font-display: swap;
-}
