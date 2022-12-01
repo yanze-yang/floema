@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "George X";
     src: url("/fonts/george_x.woff") format("woff");
+    font-display: fallback;
   }
 `;
 
