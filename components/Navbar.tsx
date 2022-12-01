@@ -7,7 +7,6 @@ type NavbarProps = {
 
 const Wrapper = styled.nav`
   padding: calc(2rem + 1vw);
-  background-color: ${(props) => props.theme.color.quicksand};
 `;
 
 const FlexLayout = styled.div`

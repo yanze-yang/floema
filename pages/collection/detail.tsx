@@ -2,55 +2,71 @@ import React from "react";
 import Container from "../../components/Container";
 import Navbar from "../../components/Navbar";
 import CloseButton from "../../components/CloseButton";
-import styled from "styled-components";
 
-const Section = styled.section`
-  background-color: ${(props) => props.theme.color.quicksand};
+import styled from "styled-components";
+import DescriptionIcon from "./DescriptionIcon";
+
+const ImageContentGrid = styled.div`
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 3rem 0rem;
+  justify-items: center;
 `;
 
-type IconProps = {
-  src: string;
-  type: string;
-  alt: string;
-};
+const ContentWrapperFlex = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
 
-const Title = styled.h1`
+const CollectionTag = styled.div`
+  font-size: 0.875rem;
+  font-size: clamp(
+    0.875rem,
+    0.3511904761904763rem + 2.380952380952381vw,
+    1.875rem
+  );
+  line-height: 110%;
+`;
+
+const ProductName = styled.h1`
   font-size: 5.3125rem;
   font-size: clamp(
     5.3125rem,
     -0.2857142857142856rem + 25.44642857142857vw,
     16rem
   );
+  font-family: ${(props) => props.theme.font.serif};
   line-height: 110%;
 `;
 
-const Icon = ({ src, type, alt }: IconProps) => {
-  return (
-    <picture className="self-start w-12 sm:w-16 md:w-28">
-      <source srcSet={src} type={`image/${type}`} />
-      <img src={src} alt={alt} />
-    </picture>
-  );
-};
+const DescriptionGrid = styled.div`
+  display: grid;
+  grid-template-columns: 3rem auto;
+  grid-template-rows: repeat(4, min-content);
+  grid-row-gap: 1.5rem;
+  grid-column-gap: calc(2rem + 1.5vw);
+`;
 
-const Description = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div
-      className="font-sans font-extralight text-sm tracking-tight sm:text-2xl md:text-4xl"
-      style={{ lineHeight: "140%" }}
-    >
-      {children}
-    </div>
+const Description = styled.div`
+  font-size: 1.125rem;
+  font-size: clamp(
+    1.125rem,
+    1.3154761904761905rem + -0.2976190476190476vw,
+    1.25rem
   );
-};
+  font-weight: 200;
+`;
 
-const Tag = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className="self-start font-sans font-light text-sm sm:text-2xl md:text-4xl">
-      {children}
-    </div>
+const Tag = styled.div`
+  font-size: clamp(
+    1.125rem,
+    1.3154761904761905rem + -0.2976190476190476vw,
+    1.25rem
   );
-};
+  font-weight: 300;
+`;
 
 const ShopButton = styled.div`
   font-size: 2.25rem;
@@ -62,7 +78,7 @@ const ShopButton = styled.div`
   font-family: ${(props) => props.theme.font.serif};
 `;
 
-const FlexBottom = styled.div`
+const BottomFlex = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,52 +91,53 @@ const FlexBottom = styled.div`
 
 export default function DetailIndex() {
   return (
-    <>
+    <div style={{ backgroundColor: "#BC978C" }}>
       <Navbar isDetailPage={true} />
-      <Section>
-        <Container>
-          <div className="py-10 sm:py-16 md:py-24">
-            <picture>
-              <source srcSet="/carousel.png" type="image/png" />
-              <img
-                className="mb-5 sm:mb-8 md:mb-16 mx-auto"
-                src="/carousel.png"
-                alt="carousel"
+      <Container>
+        <ImageContentGrid>
+          <picture>
+            <source srcSet="/carousel.png" type="image/png" />
+            <img src="/carousel.png" alt="carousel" />
+          </picture>
+          <ContentWrapperFlex>
+            <CollectionTag>VITA COLLECTION</CollectionTag>
+            <ProductName>Silver Necklace</ProductName>
+            <DescriptionGrid>
+              <DescriptionIcon
+                src="/icon-compass.png"
+                alt="icon-compass"
+                type="png"
               />
-            </picture>
-            <div className="font-sans text-base tracking-normal font-light pb-10 sm:text-xl md:text-2xl">
-              VITA COLLECTION
-            </div>
-
-            <Title className="font-serif">Silver Necklace</Title>
-          </div>
-          <div className="grid grid-rows-[repeat(4, min-content)] grid-cols-[1fr_4fr] items-center gap-x-4 gap-y-6 sm:gap-x-3 sm:gap-y-9 md:gap-x-8">
-            <Icon src="/icon-compass.png" alt="icon-compass" type="png" />
-            <Description>
-              The necklace is 44 cm long. <br></br>The setting is 5 mm long and
-              4 mm wide.
-            </Description>
-            <Icon src="/icon-star.png" alt="/icon-star" type="png" />
-            <Description>Silver. Ruby Stone</Description>
-            <Tag>Info</Tag>
-            <Description>
-              This luminous necklace, called “Venetian” is perfect for the four
-              thread woven bezel that protects a wonderful intense red ruby. The
-              necklace is completely made in Sterling Silver.
-            </Description>
-            <Tag>You should know</Tag>
-            <Description>
-              Each FLOEMA jewel is entirely handmade: any difference from the
-              original picture evidences the unique and artisanal manufacture of
-              the piece.
-            </Description>
-          </div>
-          <FlexBottom>
+              <Description>
+                The necklace is 44 cm long. <br></br>The setting is 5 mm long
+                and 4 mm wide.
+              </Description>
+              <DescriptionIcon
+                src="/icon-star.png"
+                alt="/icon-star"
+                type="png"
+              />
+              <Description>Silver. Ruby Stone</Description>
+              <Tag>Info</Tag>
+              <Description>
+                This luminous necklace, called “Venetian” is perfect for the
+                four thread woven bezel that protects a wonderful intense red
+                ruby. The necklace is completely made in Sterling Silver.
+              </Description>
+              <Tag>You should know</Tag>
+              <Description>
+                Each FLOEMA jewel is entirely handmade: any difference from the
+                original picture evidences the unique and artisanal manufacture
+                of the piece.
+              </Description>
+            </DescriptionGrid>
             <ShopButton>Shop it &gt;</ShopButton>
-            <CloseButton />
-          </FlexBottom>
-        </Container>
-      </Section>
-    </>
+          </ContentWrapperFlex>
+        </ImageContentGrid>
+        <BottomFlex>
+          <CloseButton />
+        </BottomFlex>
+      </Container>
+    </div>
   );
 }
