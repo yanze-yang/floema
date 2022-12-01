@@ -45,10 +45,19 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@200;300&display=swap"
             rel="stylesheet"
           />
+
+          <link
+            rel="preload"
+            href="fonts/font/George X.otf"
+            as="font"
+            type="font/woff"
+            crossOrigin=""
+          />
         </Head>
+
         <body>
           <Main />
           <NextScript />

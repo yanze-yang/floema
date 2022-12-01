@@ -4,6 +4,6 @@ export const theme = {
     greyBlue: "#B2B8C3",
   },
   font: {
-    serif: 'Pacifico'
+    serif: `"George X", "Times New Roman", Times, serif`
   },
 };
