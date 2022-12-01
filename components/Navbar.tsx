@@ -1,4 +1,3 @@
-import Link from "next/link";
 import CloseButton from "./CloseButton";
 import styled from "styled-components";
 
@@ -23,8 +22,14 @@ const Logo = styled.div`
 
 const About = styled.div`
   font-size: 1.5rem;
-  font-family: "George X", "Times New Roman", Times, serif;
+  font-family: ${(props) => props.theme.font.serif};
   letter-spacing: 1px;
+`;
+
+const FlexCenter = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
 `;
 
 export default function Navbar({ isDetailPage }: NavbarProps) {
@@ -40,9 +45,9 @@ export default function Navbar({ isDetailPage }: NavbarProps) {
         <About>About</About>
       </FlexLayout>
       {isDetailPage ? (
-        <div className="flex justify-center mt-10">
+        <FlexCenter>
           <CloseButton />
-        </div>
+        </FlexCenter>
       ) : null}
     </Wrapper>
   );

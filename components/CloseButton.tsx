@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  .link {
+  span {
     font-size: 1.1rem;
     font-weight: 200;
     letter-spacing: 1px;
@@ -22,10 +22,10 @@ const Wrapper = styled.div`
 
 export default function CloseButton() {
   return (
-    <Wrapper>
-      <Link className="link" href="/collection">
-        CLOSE
-      </Link>
-    </Wrapper>
+    <Link href="/collection">
+      <Wrapper>
+        <span>CLOSE</span>
+      </Wrapper>
+    </Link>
   );
 }

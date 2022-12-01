@@ -3,5 +3,7 @@ export const theme = {
     quicksand: "#BC978C",
     greyBlue: "#B2B8C3",
   },
-  font: {},
+  font: {
+    serif: `"George X", "Times New Roman", Times, serif`
+  },
 };

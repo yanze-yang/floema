@@ -32,3 +32,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Trouble Shooting
+
+### [styled-components are not working with Next.js SSR](https://github.com/styled-components/styled-components/issues/3634)
+
+[Next.js Doc: Example app with styled-components using babel](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components-babel)
+copy `.babelrc` and `page/_document.tsx`

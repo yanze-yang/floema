@@ -1,8 +1,7 @@
 import React from "react";
-import ContainerMeduim from "../../components/ContainerMeduim";
-import Navbar from "../../components/Navbar";
-import ShopButton from "../../components/ShopButton";
-import CloseButton from "../../components/CloseButton";
+import ContainerMeduim from "../../../components/ContainerMeduim";
+import Navbar from "../../../components/Navbar";
+import CloseButton from "../../../components/CloseButton";
 import styled from "styled-components";
 
 type IconProps = {
@@ -49,7 +48,24 @@ const Tag = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default function Detail() {
+const ShopButton = styled.div`
+  font-size: 3.75rem;
+  font-size: clamp(3.75rem, 1.785714285714286rem + 8.928571428571427vw, 7.5rem);
+  font-family: ${(props) => props.theme.font.serif};
+`;
+
+const FlexBottom = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  padding: 4rem 0 8rem 0;
+  ${ShopButton} {
+    align-self: flex-start;
+  }
+`;
+
+export default function DetailIndex() {
   return (
     <>
       <Navbar isDetailPage={true} />
@@ -67,9 +83,7 @@ export default function Detail() {
             <div className="font-sans text-base tracking-normal font-light pb-10 sm:text-xl md:text-2xl">
               VITA COLLECTION
             </div>
-            {/* <h1 className="text-8xl font-serif tracking-tight leading-[5.3rem] sm:text-[8.5rem] sm:leading-[8rem] md:text-9xl md:text-[14rem] md:leading-[15rem]">
-              Silver Necklace
-            </h1> */}
+
             <Title className="font-serif">Silver Necklace</Title>
           </div>
           <div className="grid grid-rows-[repeat(4, min-content)] grid-cols-[1fr_4fr] items-center gap-x-4 gap-y-6 sm:gap-x-3 sm:gap-y-9 md:gap-x-8">
@@ -93,10 +107,10 @@ export default function Detail() {
               the piece.
             </Description>
           </div>
-          <ShopButton className="pt-16 md:pt-32" />
-          <div className="flex justify-center pt-12 pb-32 md:pt-28 md:pb-72">
+          <FlexBottom>
+            <ShopButton>Shop it &gt;&gt;</ShopButton>
             <CloseButton />
-          </div>
+          </FlexBottom>
         </ContainerMeduim>
       </section>
     </>
