@@ -3,6 +3,26 @@ import Navbar from "../../components/Navbar";
 import ContainerMax from "./ContainerMax";
 import styled from "styled-components";
 
+const Header = styled.div`
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    width: 100%;
+    font-size: clamp(5rem, 3.961rem + 4.748vw, 7rem);
+    line-height: 7rem;
+    font-family: ${({ theme }) => theme.font.serif};
+    text-align: center;
+    padding: 0 2rem;
+
+    @media screen and (min-width: 1024px) {
+      line-height: 8.5rem;
+      max-width: 1344px;
+      padding: 0 3rem;
+    }
+  }
+`;
+
 const IntorPosition = styled.div<{
   alignPosition: "center" | "right" | "left";
 }>`
@@ -42,12 +62,15 @@ const IntroWrapper = styled.div<IntroProps>`
 const IntroContent = styled.div`
   display: flex;
   flex-direction: row;
-  // gap bettween tag name and description
-  gap: min(7rem, 5vw);
-  padding: 0 2.5rem;
+  padding: 0 2rem;
+  gap: min(3rem);
 
   span {
     font-size: 0.8rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 3rem;
   }
 `;
 
@@ -70,9 +93,9 @@ export default function AboutIndex() {
         <Navbar />
         <img src="/CAROUSEL PHOTOS.png" alt="" />
 
-        <h1 style={{ fontSize: "7rem" }}>
-          Creating new dialogues between threads and metal
-        </h1>
+        <Header>
+          <h1>Creating new dialogues between threads and metal</h1>
+        </Header>
         <IntorPosition alignPosition="center">
           <IntroWrapper maxWidth="79rem">
             <IntroContent>
@@ -147,10 +170,13 @@ export default function AboutIndex() {
         </IntorPosition>
 
         <img src="/CAROUSEL POSTERS.png" alt="" />
-        <h1 style={{ fontSize: "7rem" }}>
-          The surprise of what is possible to make with a simple and thin
-          thread.
-        </h1>
+        <Header>
+          <h1>
+            The surprise of what is possible to make with a simple and thin
+            thread.
+          </h1>
+        </Header>
+
         <IntorPosition alignPosition="left">
           <IntroWrapper isLeftImg maxWidth="94rem">
             <IntroContent>
@@ -202,7 +228,7 @@ export default function AboutIndex() {
         <IntorPosition alignPosition="right">
           <IntroWrapper maxWidth="94rem">
             <IntroContent>
-              <span>SUSTAINABILITY</span>
+              <span>SUSTAIN ABILITY</span>
               <Description>
                 <p>
                   FLOEMA engages in its own small way to choose green solutions
