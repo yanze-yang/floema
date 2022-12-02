@@ -10,7 +10,7 @@ const Header = styled.div`
   h1 {
     width: 100%;
     font-size: clamp(5rem, 3.961rem + 4.748vw, 7rem);
-    line-height: 7rem;
+    line-height: 5rem;
     font-family: ${({ theme }) => theme.font.serif};
     text-align: center;
     padding: 0 2rem;
