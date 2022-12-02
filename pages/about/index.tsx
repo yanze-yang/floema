@@ -3,31 +3,39 @@ import Navbar from "../../components/Navbar";
 import ContainerMax from "./ContainerMax";
 import styled from "styled-components";
 
-const IntorPosition = styled.div`
+const IntorPosition = styled.div<{
+  alignPosition: "center" | "right" | "left";
+}>`
+  margin: 5rem 0;
   display: flex;
   justify-content: center;
-  width: 100%;
+
+  @media screen and (min-width: 1024px) {
+    margin: 10rem 0;
+    justify-content: ${(props) => props.alignPosition};
+  }
 `;
 
 type IntroProps = {
-  alignPosition: "center" | "right" | "left";
   isLeftImg?: boolean;
+  isBottomImg?: boolean;
   maxWidth: string;
 };
 
 const IntroWrapper = styled.div<IntroProps>`
   display: flex;
-  flex-direction: ${(props) => (props.isLeftImg ? "row-reverse" : "row")};
-  /* justify-content: ${(props) => props.alignPosition};
-   */
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: ${(props) => props.maxWidth};
-  width: 100%;
-  margin: 10rem 0;
+  flex-direction: ${(props) =>
+    props.isBottomImg ? "column" : "column-reverse"};
+  align-items: center;
+  gap: calc(1rem + 12vw);
 
-  @media screen and (max-width: 1024px) {
-    flex-direction: column;
+  @media screen and (min-width: 1024px) {
+    flex-direction: ${(props) => (props.isLeftImg ? "row-reverse" : "row")};
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: ${(props) => props.maxWidth};
+    gap: unset;
   }
 `;
 
@@ -50,8 +58,9 @@ const Description = styled.div`
   }
 `;
 
-const IntroImage = styled.div`
+const IntroImage = styled.div<{ padding?: boolean }>`
   max-width: 100%;
+  padding: ${(props) => (props.padding ? "0 2rem" : "")};
 `;
 
 export default function AboutIndex() {
@@ -64,8 +73,8 @@ export default function AboutIndex() {
         <h1 style={{ fontSize: "7rem" }}>
           Creating new dialogues between threads and metal
         </h1>
-        <IntorPosition>
-          <IntroWrapper alignPosition="center" maxWidth="79rem">
+        <IntorPosition alignPosition="center">
+          <IntroWrapper maxWidth="79rem">
             <IntroContent>
               <span>ABOUT ME</span>
               <Description>
@@ -95,7 +104,7 @@ export default function AboutIndex() {
                 </p>
               </Description>
             </IntroContent>
-            <IntroImage>
+            <IntroImage padding>
               <picture>
                 <img src="/intro_img_01.png" alt="image" />
               </picture>
@@ -103,9 +112,8 @@ export default function AboutIndex() {
           </IntroWrapper>
         </IntorPosition>
         <img src="/mockup_img_01.png" alt="" />
-        <IntorPosition>
-          {" "}
-          <IntroWrapper alignPosition="right" maxWidth="105rem">
+        <IntorPosition alignPosition="right">
+          <IntroWrapper maxWidth="105rem" isBottomImg>
             <IntroContent>
               <span>THE BRAND</span>
               <Description>
@@ -143,8 +151,8 @@ export default function AboutIndex() {
           The surprise of what is possible to make with a simple and thin
           thread.
         </h1>
-        <IntorPosition>
-          <IntroWrapper alignPosition="left" isLeftImg maxWidth="94rem">
+        <IntorPosition alignPosition="left">
+          <IntroWrapper isLeftImg maxWidth="94rem">
             <IntroContent>
               <span>JEWELRY CARE</span>
               <Description>
@@ -191,8 +199,8 @@ export default function AboutIndex() {
             </IntroImage>
           </IntroWrapper>
         </IntorPosition>
-        <IntorPosition>
-          <IntroWrapper alignPosition="right" maxWidth="94rem">
+        <IntorPosition alignPosition="right">
+          <IntroWrapper maxWidth="94rem">
             <IntroContent>
               <span>SUSTAINABILITY</span>
               <Description>
@@ -214,7 +222,7 @@ export default function AboutIndex() {
                 </p>
               </Description>
             </IntroContent>
-            <IntroImage>
+            <IntroImage padding>
               <picture>
                 <img src="/intro_img_04.png" alt="image" />
               </picture>
