@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import Navbar from "../../components/Navbar";
 import ContainerMax from "./ContainerMax";
 import styled from "styled-components";
+import RaiseText from "../../components/RaiseText";
 
 export async function getStaticProps() {
   return {
@@ -15,12 +16,12 @@ const Header = styled.div`
   justify-content: center;
 
   h1 {
-    width: 100%;
-    font-size: clamp(5rem, 3.961rem + 4.748vw, 7rem);
-    line-height: 5rem;
-    font-family: ${({ theme }) => theme.font.serif};
-    text-align: center;
     padding: 0 2rem;
+    font-family: ${({ theme }) => theme.font.serif};
+    font-size: clamp(5rem, 3.961rem + 4.748vw, 7rem);
+    text-align: center;
+    line-height: clamp(6rem, 3.182rem + 8.309vw, 8.5rem);
+    width: 100%;
 
     @media screen and (min-width: 1024px) {
       line-height: 8.5rem;
@@ -98,10 +99,16 @@ export default function AboutIndex() {
     <div style={{ backgroundColor: "#B2B8C3" }}>
       <ContainerMax>
         <Navbar />
-        <img src="/CAROUSEL PHOTOS.png" alt="" />
+        <picture>
+          <img src="/CAROUSEL PHOTOS.png" />
+        </picture>
 
         <Header>
-          <h1>Creating new dialogues between threads and metal</h1>
+          <h1>
+            <RaiseText>
+              Creating new dialogues between threads and metal
+            </RaiseText>
+          </h1>
         </Header>
         <IntorPosition alignPosition="center">
           <IntroWrapper maxWidth="79rem">
@@ -136,12 +143,15 @@ export default function AboutIndex() {
             </IntroContent>
             <IntroImage padding>
               <picture>
-                <img src="/intro_img_01.png" alt="image" />
+                <img src="/intro_img_01.png" />
               </picture>
             </IntroImage>
           </IntroWrapper>
         </IntorPosition>
-        <img src="/mockup_img_01.png" alt="" />
+
+        <picture>
+          <img src="/mockup_img_01.png" />
+        </picture>
         <IntorPosition alignPosition="right">
           <IntroWrapper maxWidth="105rem" isBottomImg>
             <IntroContent>
@@ -170,18 +180,19 @@ export default function AboutIndex() {
             </IntroContent>
             <IntroImage>
               <picture>
-                <img src="/intro_img_02.png" alt="image" />
+                <img src="/intro_img_02.png" />
               </picture>
             </IntroImage>
           </IntroWrapper>
         </IntorPosition>
-
-        <img src="/CAROUSEL POSTERS.png" alt="" />
+        <picture>
+          <img src="/CAROUSEL POSTERS.png" />
+        </picture>
         <Header>
-          <h1>
+          <RaiseText>
             The surprise of what is possible to make with a simple and thin
             thread.
-          </h1>
+          </RaiseText>
         </Header>
 
         <IntorPosition alignPosition="left">
@@ -227,7 +238,7 @@ export default function AboutIndex() {
             </IntroContent>
             <IntroImage>
               <picture>
-                <img src="/intro_img_03.png" alt="image" />
+                <img src="/intro_img_03.png" />
               </picture>
             </IntroImage>
           </IntroWrapper>
@@ -257,13 +268,14 @@ export default function AboutIndex() {
             </IntroContent>
             <IntroImage padding>
               <picture>
-                <img src="/intro_img_04.png" alt="image" />
+                <img src="/intro_img_04.png" />
               </picture>
             </IntroImage>
           </IntroWrapper>
         </IntorPosition>
-
-        <img src="/mockup_img_02.png"></img>
+        <picture>
+          <img src="/mockup_img_02.png" />
+        </picture>
       </ContainerMax>
     </div>
   );
