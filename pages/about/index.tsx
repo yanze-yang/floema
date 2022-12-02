@@ -3,6 +3,13 @@ import Navbar from "../../components/Navbar";
 import ContainerMax from "./ContainerMax";
 import styled from "styled-components";
 
+export async function getStaticProps() {
+  return {
+    // Passed to the page component as props
+    props: { post: {} },
+  };
+}
+
 const Header = styled.div`
   display: flex;
   justify-content: center;
