@@ -18,9 +18,9 @@ const Header = styled.div`
   h1 {
     padding: 0 2rem;
     font-family: ${({ theme }) => theme.font.serif};
-    font-size: clamp(5rem, 3.961rem + 4.748vw, 7rem);
+    font-size: clamp(4rem, 2.259rem + 7.43vw, 8.5rem);
     text-align: center;
-    line-height: clamp(6rem, 3.182rem + 8.309vw, 8.5rem);
+    line-height: clamp(4.5rem, 2.952rem + 6.605vw, 8.5rem);
     width: 100%;
 
     @media screen and (min-width: 1024px) {
