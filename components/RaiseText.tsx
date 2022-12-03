@@ -1,9 +1,6 @@
 import * as React from "react";
-import {
-  SplitText,
-  WordWrapperProp,
-  LineWrapperProp,
-} from "@cyriacbr/react-split-text";
+import { SplitText } from "@cyriacbr/react-split-text";
+import { WordWrapperProp, LineWrapperProp } from "./Wrappers";
 import { motion } from "framer-motion";
 
 const WordWrapper: React.FC<WordWrapperProp> = ({ children, wordIndex }) => {
