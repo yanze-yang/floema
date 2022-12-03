@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SplitText } from "@cyriacbr/react-split-text";
+import { SplitText } from "./SplitText";
 import { WordWrapperProp, LineWrapperProp } from "./Wrappers";
 import { motion } from "framer-motion";
 
