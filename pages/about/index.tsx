@@ -16,17 +16,15 @@ const Header = styled.div`
   justify-content: center;
 
   h1 {
-    padding: 0 2rem;
+    padding: 3rem 2rem;
     font-family: ${({ theme }) => theme.font.serif};
     font-size: clamp(4rem, 2.259rem + 7.43vw, 8.5rem);
     text-align: center;
-    line-height: clamp(4.5rem, 2.952rem + 6.605vw, 8.5rem);
-    width: 100%;
+    line-height: clamp(4.5rem, 2.372rem + 9.082vw, 10rem);
 
     @media screen and (min-width: 1024px) {
-      line-height: 8.5rem;
       max-width: 1344px;
-      padding: 0 3rem;
+      padding: 3rem 3rem;
     }
   }
 `;
@@ -34,7 +32,7 @@ const Header = styled.div`
 const IntorPosition = styled.div<{
   alignPosition: "center" | "right" | "left";
 }>`
-  margin: 5rem 0;
+  margin: 4rem 0 7rem 0;
   display: flex;
   justify-content: center;
 
@@ -55,7 +53,7 @@ const IntroWrapper = styled.div<IntroProps>`
   flex-direction: ${(props) =>
     props.isBottomImg ? "column" : "column-reverse"};
   align-items: center;
-  gap: calc(1rem + 12vw);
+  gap: calc(1.2rem + 6vw);
 
   @media screen and (min-width: 1024px) {
     flex-direction: ${(props) => (props.isLeftImg ? "row-reverse" : "row")};
