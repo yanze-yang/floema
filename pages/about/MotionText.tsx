@@ -30,6 +30,7 @@ export default function MotionText({
           initial={{ y: "100%" }}
           animate={{ y: "0%" }}
           style={{
+            display: "inline-block",
             whiteSpace: "pre",
           }}
         >
