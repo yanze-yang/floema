@@ -10,6 +10,7 @@ const IntorPosition = styled.div<PositionProps>`
   margin: 4rem 0 7rem 0;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 
   @media screen and (min-width: 1024px) {
     margin: 10rem 0;
