@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import React from "react";
 import Navbar from "../../components/Navbar";
 import ContainerMax from "./ContainerMax";
 import styled from "styled-components";
-import RaiseText from "../../components/RaiseText";
+import MotionText from "./MotionText";
 
 export async function getStaticProps() {
   return {
@@ -100,14 +100,14 @@ export default function AboutIndex() {
       <ContainerMax>
         <Navbar />
         <picture>
-          <img src="/CAROUSEL PHOTOS.png" />
+          <img src="/CAROUSEL PHOTOS.png" alt="image" />
         </picture>
 
         <Header>
           <h1>
-            <RaiseText>
+            <MotionText>
               Creating new dialogues between threads and metal
-            </RaiseText>
+            </MotionText>
           </h1>
         </Header>
         <IntorPosition alignPosition="center">
@@ -143,14 +143,14 @@ export default function AboutIndex() {
             </IntroContent>
             <IntroImage padding>
               <picture>
-                <img src="/intro_img_01.png" />
+                <img src="/intro_img_01.png" alt="image" />
               </picture>
             </IntroImage>
           </IntroWrapper>
         </IntorPosition>
 
         <picture>
-          <img src="/mockup_img_01.png" />
+          <img src="/mockup_img_01.png" alt="image" />
         </picture>
         <IntorPosition alignPosition="right">
           <IntroWrapper maxWidth="105rem" isBottomImg>
@@ -180,19 +180,21 @@ export default function AboutIndex() {
             </IntroContent>
             <IntroImage>
               <picture>
-                <img src="/intro_img_02.png" />
+                <img src="/intro_img_02.png" alt="image" />
               </picture>
             </IntroImage>
           </IntroWrapper>
         </IntorPosition>
         <picture>
-          <img src="/CAROUSEL POSTERS.png" />
+          <img src="/CAROUSEL POSTERS.png" alt="image" />
         </picture>
         <Header>
-          <RaiseText>
-            The surprise of what is possible to make with a simple and thin
-            thread.
-          </RaiseText>
+          <h1>
+            <MotionText>
+              The surprise of what is possible to make with a simple and thin
+              thread.
+            </MotionText>
+          </h1>
         </Header>
 
         <IntorPosition alignPosition="left">
@@ -238,7 +240,7 @@ export default function AboutIndex() {
             </IntroContent>
             <IntroImage>
               <picture>
-                <img src="/intro_img_03.png" />
+                <img src="/intro_img_03.png" alt="image" />
               </picture>
             </IntroImage>
           </IntroWrapper>
@@ -268,13 +270,13 @@ export default function AboutIndex() {
             </IntroContent>
             <IntroImage padding>
               <picture>
-                <img src="/intro_img_04.png" />
+                <img src="/intro_img_04.png" alt="image" />
               </picture>
             </IntroImage>
           </IntroWrapper>
         </IntorPosition>
         <picture>
-          <img src="/mockup_img_02.png" />
+          <img src="/mockup_img_02.png" alt="image" />
         </picture>
       </ContainerMax>
     </div>
