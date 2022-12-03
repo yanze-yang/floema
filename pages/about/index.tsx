@@ -3,7 +3,6 @@ import Navbar from "../../components/Navbar";
 import ContainerMax from "./ContainerMax";
 import styled from "styled-components";
 import MotionText from "./MotionText";
-import { motion } from "framer-motion";
 import Introduction from "./Introduction";
 
 export async function getStaticProps() {
@@ -33,9 +32,9 @@ const Header = styled.div`
 
 export default function AboutIndex() {
   return (
-    <div style={{ backgroundColor: "#B2B8C3" }}>
+    <div style={{ backgroundColor: "#B2B8C3", color: "#37384C" }}>
       <ContainerMax>
-        <Navbar />
+        <Navbar isDarkLogo />
         <picture>
           <img src="/CAROUSEL PHOTOS.png" alt="image" />
         </picture>

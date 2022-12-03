@@ -95,30 +95,47 @@ export default function Introduction({
     whileInView = { opacity: 1, rotate: 0, x: "0%" };
   }
 
+  let textInitial = { opacity: 0, x: "10%" };
+  let textwhileInView = { opacity: 1, x: "0%" };
+
+  if (!isLeftImg) {
+    textInitial = { opacity: 0, x: "-10%" };
+    textwhileInView = { opacity: 1, x: "0%" };
+  }
   return (
     <>
-      <IntorPosition
-        as={motion.div}
-        initial={initial}
-        whileInView={whileInView}
-        viewport={{ once: true }}
-        transition={{
-          ease: "easeOut",
-          duration: 0.5,
-          delay: 0.2,
-        }}
-        alignPosition={alignPosition}
-      >
+      <IntorPosition alignPosition={alignPosition}>
         <IntroWrapper
           maxWidth={maxWidth}
           isLeftImg={isLeftImg}
           isBottomImg={isBottomImg}
         >
-          <IntroContent>
+          <IntroContent
+            as={motion.div}
+            initial={textInitial}
+            whileInView={textwhileInView}
+            viewport={{ once: false }}
+            transition={{
+              ease: "easeOut",
+              duration: 0.5,
+              delay: 0.2,
+            }}
+          >
             <span>{labelName?.toUpperCase()}</span>
             <Description>{children}</Description>
           </IntroContent>
-          <IntroImage hasImgPadding={hasImgPadding}>
+          <IntroImage
+            as={motion.div}
+            initial={initial}
+            whileInView={whileInView}
+            viewport={{ once: false }}
+            transition={{
+              ease: "easeOut",
+              duration: 0.5,
+              delay: 0.2,
+            }}
+            hasImgPadding={hasImgPadding}
+          >
             <picture>
               <img src={imageSrc} alt={imageSrc} />
             </picture>

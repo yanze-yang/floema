@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 type NavbarProps = {
   isDetailPage?: true | null;
+  isDarkLogo: true | null;
 };
 
 const Wrapper = styled.nav`
@@ -31,15 +32,20 @@ const FlexCenter = styled.div`
   margin-top: 2.5rem;
 `;
 
-export default function Navbar({ isDetailPage }: NavbarProps) {
+export default function Navbar({ isDetailPage, isDarkLogo }: NavbarProps) {
   return (
     <Wrapper>
       <FlexLayout>
         <Logo>
-          <picture>
-            <source srcSet="/logo_white.svg" type="image/webp" />
-            <img src="/logo_white.svg" alt="logo" />
-          </picture>
+          {isDarkLogo ? (
+            <picture>
+              <img src="/logo_black.svg" alt="logo" />
+            </picture>
+          ) : (
+            <picture>
+              <img src="/logo_white.svg" alt="logo" />
+            </picture>
+          )}
         </Logo>
         <About>About</About>
       </FlexLayout>
