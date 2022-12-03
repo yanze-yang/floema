@@ -22,13 +22,14 @@ export default function MotionText({
         }}
       >
         <motion.span
+          initial={{ y: "100%" }}
+          whileInView={{ y: "0%" }}
+          viewport={{ once: true }}
           transition={{
             ease: "easeOut",
-            duration: 0.6,
-            delay: 0.1 * index,
+            duration: 0.5,
+            delay: 0.03 * index,
           }}
-          initial={{ y: "100%" }}
-          animate={{ y: "0%" }}
           style={{
             display: "inline-block",
             whiteSpace: "pre",
