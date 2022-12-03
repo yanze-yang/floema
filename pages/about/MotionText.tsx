@@ -17,6 +17,7 @@ export default function MotionText({
       <span
         style={{
           overflow: "hidden",
+          verticalAlign: "top",
           display: "inline-block",
         }}
       >
@@ -29,10 +30,7 @@ export default function MotionText({
           initial={{ y: "100%" }}
           animate={{ y: "0%" }}
           style={{
-            display: "inline-block",
             whiteSpace: "pre",
-            overflow: "hidden",
-            //   padding: "0 2rem",
           }}
         >
           {children}
