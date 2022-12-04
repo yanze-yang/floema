@@ -1,9 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Navbar from "../../components/Navbar";
 import ContainerMax from "./ContainerMax";
 import styled from "styled-components";
 import MotionText from "./MotionText";
 import Introduction from "./Introduction";
+import { motion } from "framer-motion";
 
 export async function getStaticProps() {
   return {
@@ -30,14 +32,108 @@ const Header = styled.div`
   }
 `;
 
+const CarouselPhoto = styled.div`
+  display: none;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    gap: 1.2rem;
+    padding: 8rem 0;
+  }
+`;
+
 export default function AboutIndex() {
   return (
     <div style={{ backgroundColor: "#B2B8C3", color: "#37384C" }}>
       <ContainerMax>
         <Navbar isDarkLogo />
-        <picture>
-          <img src="/CAROUSEL PHOTOS.png" alt="image" />
-        </picture>
+
+        <CarouselPhoto>
+          <motion.picture
+            initial={{ opacity: 0, rotate: -18, y: "30%" }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0 },
+            }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.1, zIndex: 100 }}
+          >
+            <img src="/carousel_photo/1.png" alt="image" />
+          </motion.picture>
+          <motion.picture
+            initial={{ opacity: 0, rotate: -10, y: "10%" }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.1 },
+            }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.2, zIndex: 100 }}
+          >
+            <img src="/carousel_photo/2.png" alt="image" />
+          </motion.picture>
+          <motion.picture
+            initial={{ opacity: 0, rotate: -4, y: "0%" }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.15 },
+            }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.3, zIndex: 100 }}
+          >
+            <img src="/carousel_photo/3.png" alt="image" />
+          </motion.picture>
+          <motion.picture
+            initial={{ opacity: 0, y: "-3%" }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.2 },
+            }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.4, zIndex: 100 }}
+          >
+            <img src="/carousel_photo/4.png" alt="image" />
+          </motion.picture>
+          <motion.picture
+            initial={{ opacity: 0, rotate: 4, y: "0%" }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.25 },
+            }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.3, zIndex: 100 }}
+          >
+            <img src="/carousel_photo/5.png" alt="image" />
+          </motion.picture>
+          <motion.picture
+            initial={{ opacity: 0, rotate: 10, y: "10%" }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.3 },
+            }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.2, zIndex: 100 }}
+          >
+            <img src="/carousel_photo/6.png" alt="image" />
+          </motion.picture>
+          <motion.picture
+            initial={{ opacity: 0, rotate: 18, y: "30%" }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.35 },
+            }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.1, zIndex: 100 }}
+          >
+            <img src="/carousel_photo/7.png" alt="image" />
+          </motion.picture>
+        </CarouselPhoto>
         <Header>
           <h1>
             <MotionText>
@@ -78,7 +174,6 @@ export default function AboutIndex() {
             2016- February 2017).
           </p>
         </Introduction>
-
         <picture>
           <img src="/mockup_img_01.png" alt="image" />
         </picture>
@@ -111,9 +206,92 @@ export default function AboutIndex() {
             eliminate the child brides phenomenon.
           </p>
         </Introduction>
-        <picture>
-          <img src="/CAROUSEL POSTERS.png" alt="image" />
-        </picture>
+        <CarouselPhoto>
+          <motion.picture
+            initial={{ opacity: 0, rotate: -18, y: "30%" }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0 },
+            }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.1, zIndex: 100 }}
+          >
+            <img src="/carousel_poster/1.jpg" alt="image" />
+          </motion.picture>
+          <motion.picture
+            initial={{ opacity: 0, rotate: -10, y: "10%" }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.1 },
+            }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.2, zIndex: 100 }}
+          >
+            <img src="/carousel_poster/2.jpg" alt="image" />
+          </motion.picture>
+          <motion.picture
+            initial={{ opacity: 0, rotate: -4, y: "0%" }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.15 },
+            }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.3, zIndex: 100 }}
+          >
+            <img src="/carousel_poster/3.jpg" alt="image" />
+          </motion.picture>
+          <motion.picture
+            initial={{ opacity: 0, y: "-3%" }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.2 },
+            }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.4, zIndex: 100 }}
+          >
+            <img src="/carousel_poster/4.jpg" alt="image" />
+          </motion.picture>
+          <motion.picture
+            initial={{ opacity: 0, rotate: 4, y: "0%" }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.25 },
+            }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.3, zIndex: 100 }}
+          >
+            <img src="/carousel_poster/5.jpg" alt="image" />
+          </motion.picture>
+          <motion.picture
+            initial={{ opacity: 0, rotate: 10, y: "10%" }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.3 },
+            }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.2, zIndex: 100 }}
+          >
+            <img src="/carousel_poster/6.jpg" alt="image" />
+          </motion.picture>
+          <motion.picture
+            initial={{ opacity: 0, rotate: 18, y: "30%" }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.8, delay: 0.35 },
+            }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.2 }}
+            whileHover={{ scale: 1.1, zIndex: 100 }}
+          >
+            <img src="/carousel_poster/7.jpg" alt="image" />
+          </motion.picture>
+        </CarouselPhoto>
         <Header>
           <h1>
             <MotionText>
@@ -163,7 +341,6 @@ export default function AboutIndex() {
             they shine again. Finally, rinse and dry with soft cloth.
           </p>
         </Introduction>
-
         <Introduction
           labelName="SUSTAIN ABILITY"
           imageSrc="/intro_img_04.png"
