@@ -1,11 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import ContainerMax from "./ContainerMax";
 import styled from "styled-components";
 import MotionText from "./MotionText";
 import Introduction from "./Introduction";
 import { motion } from "framer-motion";
+
+export function useMediaQuery(query: string) {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+    const listener = () => {
+      setMatches(media.matches);
+    };
+    media.addListener(listener);
+    return () => media.removeListener(listener);
+  }, [matches, query]);
+
+  return matches;
+}
 
 export async function getStaticProps() {
   return {
@@ -42,7 +60,65 @@ const CarouselPhoto = styled.div`
   }
 `;
 
+const PosterOne = styled.div`
+  display: flex;
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  // select the second child of the div
+  & :nth-child(2) {
+    margin-top: 10%;
+  }
+
+  //select the last child of the div
+  & :nth-child(3) {
+    margin-top: 20%;
+  }
+
+  h1 {
+    writing-mode: vertical-rl;
+    font-family: ${({ theme }) => theme.font.serif};
+    font-size: 6rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    gap: 3rem;
+    font-size: 8rem;
+  }
+`;
+
+const PosterTwo = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* /* justify-content: center; */
+  align-items: center;
+  gap: 3rem;
+
+  h1 {
+    writing-mode: vertical-rl;
+    font-family: ${({ theme }) => theme.font.serif};
+    font-size: 6rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 3rem;
+    font-size: 8rem;
+  }
+`;
+
 export default function AboutIndex() {
+  const delay = useMediaQuery("(min-width: 1024px)")
+    ? [0, 1.3, 0.5]
+    : [0, 0, 0];
+
   return (
     <div style={{ backgroundColor: "#B2B8C3", color: "#37384C" }}>
       <ContainerMax>
@@ -174,9 +250,44 @@ export default function AboutIndex() {
             2016- February 2017).
           </p>
         </Introduction>
-        <picture>
-          <img src="/mockup_img_01.png" alt="image" />
-        </picture>
+        <PosterOne>
+          <motion.picture
+            initial={{ opacity: 0, x: "-100%" }}
+            whileInView={{ opacity: 1, x: "0%" }}
+            viewport={{ once: false }}
+            transition={{
+              ease: "easeOut",
+              duration: 0.5,
+            }}
+          >
+            <img src="/product_01.png" alt="image" />
+          </motion.picture>
+          <motion.h1
+            initial={{ opacity: 0, scale: 1.3 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              ease: "easeOut",
+              duration: 0.8,
+              delay: 1.3,
+            }}
+          >
+            floema
+          </motion.h1>
+          <motion.picture
+            initial={{ opacity: 0, x: "100%" }}
+            whileInView={{ opacity: 1, x: "0%" }}
+            viewport={{ once: false }}
+            transition={{
+              ease: "easeOut",
+              duration: 0.5,
+              delay: 0.5,
+            }}
+          >
+            <img src="/product_02.png" alt="image" />
+          </motion.picture>
+        </PosterOne>
+
         <Introduction
           labelName="THE BRAND"
           imageSrc="/intro_img_02.png"
@@ -367,9 +478,45 @@ export default function AboutIndex() {
             recycling precious materials.
           </p>
         </Introduction>
-        <picture>
-          <img src="/mockup_img_02.png" alt="image" />
-        </picture>
+
+        <PosterTwo>
+          <motion.picture
+            initial={{ opacity: 0, x: "-100%" }}
+            whileInView={{ opacity: 1, x: "0%" }}
+            viewport={{ once: false }}
+            transition={{
+              ease: "easeOut",
+              duration: 0.5,
+              delay: delay[0],
+            }}
+          >
+            <img src="/poster_01.png" alt="image" />
+          </motion.picture>
+          <motion.h1
+            initial={{ opacity: 0, scale: 1.3 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              ease: "easeOut",
+              duration: 0.8,
+              delay: delay[1],
+            }}
+          >
+            Instagram
+          </motion.h1>
+          <motion.picture
+            initial={{ opacity: 0, x: "100%" }}
+            whileInView={{ opacity: 1, x: "0%" }}
+            viewport={{ once: false }}
+            transition={{
+              ease: "easeOut",
+              duration: 0.5,
+              delay: delay[2],
+            }}
+          >
+            <img src="/poster_02.png" alt="image" />
+          </motion.picture>
+        </PosterTwo>
       </ContainerMax>
     </div>
   );
