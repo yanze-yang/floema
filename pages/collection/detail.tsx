@@ -90,54 +90,54 @@ const BottomFlex = styled.div`
 `;
 
 export default function DetailIndex() {
-  return (
-    <div style={{ backgroundColor: "#BC978C" }}>
-      <Navbar isDetailPage={true} />
-      <Container>
-        <ImageContentGrid>
-          <picture>
-            <source srcSet="/carousel.png" type="image/png" />
-            <img src="/carousel.png" alt="carousel" />
-          </picture>
-          <ContentWrapperFlex>
-            <CollectionTag>VITA COLLECTION</CollectionTag>
-            <ProductName>Silver Necklace</ProductName>
-            <DescriptionGrid>
-              <DescriptionIcon
-                src="/icon-compass.png"
-                alt="icon-compass"
-                type="png"
-              />
-              <Description>
-                The necklace is 44 cm long. <br></br>The setting is 5 mm long
-                and 4 mm wide.
-              </Description>
-              <DescriptionIcon
-                src="/icon-star.png"
-                alt="/icon-star"
-                type="png"
-              />
-              <Description>Silver. Ruby Stone</Description>
-              <Tag>Info</Tag>
-              <Description>
-                This luminous necklace, called “Venetian” is perfect for the
-                four thread woven bezel that protects a wonderful intense red
-                ruby. The necklace is completely made in Sterling Silver.
-              </Description>
-              <Tag>You should know</Tag>
-              <Description>
-                Each FLOEMA jewel is entirely handmade: any difference from the
-                original picture evidences the unique and artisanal manufacture
-                of the piece.
-              </Description>
-            </DescriptionGrid>
-            <ShopButton>Shop it &gt;</ShopButton>
-          </ContentWrapperFlex>
-        </ImageContentGrid>
-        <BottomFlex>
-          <CloseButton />
-        </BottomFlex>
-      </Container>
-    </div>
-  );
+  // return (
+  // <div style={{ backgroundColor: "#BC978C" }}>
+  //   <Navbar isDetailPage={true} />
+  //   <Container>
+  //     <ImageContentGrid>
+  //       <picture>
+  //         <source srcSet="/carousel.png" type="image/png" />
+  //         <img src="/carousel.png" alt="carousel" />
+  //       </picture>
+  //       <ContentWrapperFlex>
+  //         <CollectionTag>VITA COLLECTION</CollectionTag>
+  //         <ProductName>Silver Necklace</ProductName>
+  //         <DescriptionGrid>
+  //           <DescriptionIcon
+  //             src="/icon-compass.png"
+  //             alt="icon-compass"
+  //             type="png"
+  //           />
+  //           <Description>
+  //             The necklace is 44 cm long. <br></br>The setting is 5 mm long
+  //             and 4 mm wide.
+  //           </Description>
+  //           <DescriptionIcon
+  //             src="/icon-star.png"
+  //             alt="/icon-star"
+  //             type="png"
+  //           />
+  //           <Description>Silver. Ruby Stone</Description>
+  //           <Tag>Info</Tag>
+  //           <Description>
+  //             This luminous necklace, called “Venetian” is perfect for the
+  //             four thread woven bezel that protects a wonderful intense red
+  //             ruby. The necklace is completely made in Sterling Silver.
+  //           </Description>
+  //           <Tag>You should know</Tag>
+  //           <Description>
+  //             Each FLOEMA jewel is entirely handmade: any difference from the
+  //             original picture evidences the unique and artisanal manufacture
+  //             of the piece.
+  //           </Description>
+  //         </DescriptionGrid>
+  //         <ShopButton>Shop it &gt;</ShopButton>
+  //       </ContentWrapperFlex>
+  //     </ImageContentGrid>
+  //     <BottomFlex>
+  //       <CloseButton />
+  //     </BottomFlex>
+  //   </Container>
+  // </div>
+  // );
 }
