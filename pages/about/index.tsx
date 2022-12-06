@@ -7,6 +7,13 @@ import MotionText from "./MotionText";
 import Introduction from "./Introduction";
 import { motion } from "framer-motion";
 
+export async function getStaticProps() {
+  return {
+    // Passed to the page component as props
+    props: { post: {} },
+  };
+}
+
 export function useMediaQuery(query: string) {
   const [matches, setMatches] = useState(false);
 
@@ -23,13 +30,6 @@ export function useMediaQuery(query: string) {
   }, [matches, query]);
 
   return matches;
-}
-
-export async function getStaticProps() {
-  return {
-    // Passed to the page component as props
-    props: { post: {} },
-  };
 }
 
 const Header = styled.div`

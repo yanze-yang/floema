@@ -3,6 +3,13 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import AboutIndex from "./about";
 
+export async function getStaticProps() {
+  return {
+    // Passed to the page component as props
+    props: { post: {} },
+  };
+}
+
 export default function Home() {
   return (
     <div>
