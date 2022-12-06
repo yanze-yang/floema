@@ -119,6 +119,7 @@
   .card,
   .footer {
     border-color: #222;
+    background: rgb(13, 9, 24);
   }
   .code {
     background: #111;

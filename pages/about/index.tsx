@@ -97,6 +97,8 @@ const PosterTwo = styled.div`
   align-items: center;
   gap: 3rem;
 
+  margin-bottom: 6rem;
+
   h1 {
     writing-mode: vertical-rl;
     font-family: ${({ theme }) => theme.font.serif};
